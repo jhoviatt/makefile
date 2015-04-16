@@ -67,10 +67,10 @@ $(PROJ_NAME): $(OBJ)
 .PHONY: dir
 dir:
 	test -d $(BIN_DIR) || mkdir $(BIN_DIR)
-	test -d $(OBJ_DIR) || mkdir $(OBJ_DIR)
+	test -d $(SRC_DIR)/$(OBJ_DIR) || mkdir $(SRC_DIR)/$(OBJ_DIR)
 
 # clean command
 #.PHONY prevents it from looking for file named clean
 .PHONY : clean
 clean :
-	-rm *.o 
+	rm -r $(SRC_DIR)/$(OBJ_DIR) 
